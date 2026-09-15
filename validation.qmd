@@ -1,0 +1,53 @@
+---
+title: "Validation"
+format: html
+editor: visual
+---
+
+Papers to read:
+
+- **Collins, Koehler & Lynch (2024)** — *Methods That Support the Validation of Agent-Based Models*.
+  Use this as your map of the modern ABM validation literature. It reviews multiple validation approaches and explicitly discusses the lack of one accepted procedure.
+
+<!-- -->
+
+- **Sargent — Verification and Validation of Simulation Models.**
+  This gives you the broader simulation literature, rather than starting from ABMs.
+
+- **Bayarri et al. (2007) — A Framework for Validation of Computer Models.**
+  This is where I would start thinking statistically about comparison with physical/real observations.
+
+- **Kennedy & O'Hagan (2001) — Bayesian Calibration of Computer Models.**\
+  Focus on the distinction between
+  wrong parametersandmodel discrepancy.\\text{wrong parameters}
+  \\quad\\text{and}\\quad
+  \\text{model discrepancy}.
+
+<!-- -->
+
+- **Windrum, Fagiolo & Moneta (2007)** — empirical validation of ABMs.
+  This is useful because they explicitly discuss unresolved empirical-validation problems.
+
+- **Belfrage et al. (2024)** — credibility of ABMs for policy use.\
+
+  This pushes the question from “does it fit?” toward “can we trust conclusions drawn from it?”
+
+For each paper,
+
+Citation:
+
+What problem is this paper solving?
+
+What does "validation" mean here?
+
+What data from reality are used?
+
+How is the simulator compared with reality?
+
+How are uncertainty and stochasticity handled?
+
+How do they decide the model is adequate?
+
+Limitations / open problems:
+
+Relevant references to follow:
