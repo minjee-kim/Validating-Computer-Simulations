@@ -21,29 +21,17 @@ For each paper:
 
 Papers reviewed in this document:
 
-- **Collins, A. J., Koehler, M., & Lynch, C. J. (2024).**
-  *Methods That Support the Validation of Agent-Based Models: An Overview and Discussion.*
-  *Journal of Artificial Societies and Social Simulation*, 27(1), 11.
+- **Collins, A. J., Koehler, M., & Lynch, C. J. (2024).** *Methods That Support the Validation of Agent-Based Models: An Overview and Discussion.* *Journal of Artificial Societies and Social Simulation*, 27(1), 11.
 
-- **Sargent, R. G. (2013).**
-  *Verification and Validation of Simulation Models.*
-  *Journal of Simulation*, 7(1), 12–24.
+- **Sargent, R. G. (2013).** *Verification and Validation of Simulation Models.* *Journal of Simulation*, 7(1), 12–24.
 
-- **Bayarri, M. J., et al. (2007).**
-  *A Framework for Validation of Computer Models.*
-  *Technometrics*, 49(2), 138–154.
+- **Bayarri, M. J., et al. (2007).** *A Framework for Validation of Computer Models.* *Technometrics*, 49(2), 138–154.
 
-- **Kennedy, M. C., & O'Hagan, A. (2001).**
-  *Bayesian Calibration of Computer Models.*
-  *Journal of the Royal Statistical Society: Series B*, 63(3), 425–464.
+- **Kennedy, M. C., & O'Hagan, A. (2001).** *Bayesian Calibration of Computer Models.* *Journal of the Royal Statistical Society: Series B*, 63(3), 425–464.
 
-- **Windrum, P., Fagiolo, G., & Moneta, A. (2007).**
-  *Empirical Validation of Agent-Based Models: Alternatives and Prospects.*
-  *Journal of Artificial Societies and Social Simulation*, 10(2), 8.
+- **Windrum, P., Fagiolo, G., & Moneta, A. (2007).** *Empirical Validation of Agent-Based Models: Alternatives and Prospects.* *Journal of Artificial Societies and Social Simulation*, 10(2), 8.
 
-- **Belfrage, M., Johansson, E., Lorig, F., & Davidsson, P. (2024).**
-  *\[In\]Credible Models – Verification, Validation & Accreditation of Agent-Based Models to Support Policy-Making.*
-  *Journal of Artificial Societies and Social Simulation*, 27(4), 4.
+- **Belfrage, M., Johansson, E., Lorig, F., & Davidsson, P. (2024).** *\[In\]Credible Models – Verification, Validation & Accreditation of Agent-Based Models to Support Policy-Making.* *Journal of Artificial Societies and Social Simulation*, 27(4), 4.
 
 # Literature Review
 
