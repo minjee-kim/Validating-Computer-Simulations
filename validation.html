@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Validation</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="validation_files/libs/clipboard/clipboard.min.js"></script>
+<script src="validation_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="validation_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="validation_files/libs/quarto-html/popper.min.js"></script>
+<script src="validation_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="validation_files/libs/quarto-html/anchor.min.js"></script>
+<link href="validation_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="validation_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="validation_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="validation_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="validation_files/libs/bootstrap/bootstrap-138a6193a3bd40baf1e627da441a4734.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Validation</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="purpose" class="level1">
+<h1>Purpose</h1>
+<p>Working notes on what <strong>validation</strong> means across simulation and computer-model literatures.</p>
+<p>For each paper:</p>
+<ul>
+<li>What problem is being solved?</li>
+<li>What does “validation” mean?</li>
+<li>What real-world data are used?</li>
+<li>How is the simulator compared with reality?</li>
+<li>How are uncertainty and stochasticity handled?</li>
+<li>How is model adequacy decided?</li>
+<li>What limitations or open problems remain?</li>
+<li>What should be read next?</li>
+</ul>
+</section>
+<section id="papers" class="level1">
+<h1>Papers</h1>
+<section id="collins-koehler-lynch-2024" class="level2">
+<h2 class="anchored" data-anchor-id="collins-koehler-lynch-2024">Collins, Koehler &amp; Lynch (2024)</h2>
+<p><strong>Citation</strong></p>
+<ul>
+<li>Collins, A. J., Koehler, M., &amp; Lynch, C. J. (2024). <em>Methods That Support the Validation of Agent-Based Models: An Overview and Discussion</em>. Journal of Artificial Societies and Social Simulation, 27(1), 11. <a href="https://doi.org/10.18564/jasss.5258" class="uri">https://doi.org/10.18564/jasss.5258</a></li>
+</ul>
+<p><strong>What problem is this paper solving?</strong></p>
+<ul>
+<li>There is no universally accepted procedure for validating an agent-based model.</li>
+<li>ABMs are especially difficult to validate because both their mechanisms and the systems they represent can be complex.</li>
+<li>The paper organizes validation-supporting methods and provides practical guidance for choosing among them.</li>
+</ul>
+<p><strong>What does “validation” mean here?</strong></p>
+<ul>
+<li>Validation asks whether a model <strong>adequately represents the system under study for its intended purpose</strong>.</li>
+<li>Validation is therefore purpose-dependent rather than a claim that a model is universally “correct.”</li>
+<li>Validation is also closely connected to model credibility with users and stakeholders.</li>
+</ul>
+<p><strong>What data from reality are used?</strong></p>
+<ul>
+<li>This is a review, not a validation study of one dataset.</li>
+<li>The empirical-validation methods discussed can use social-media data, surveys, demographic and spatial data, observational field studies, historical data, or other measurements of the system being modeled.</li>
+</ul>
+<p><strong>How is the simulator compared with reality?</strong></p>
+<ul>
+<li>The paper reviews nine validation-supporting approaches:
+<ul>
+<li>data analytics,</li>
+<li>docking,</li>
+<li>empirical validation,</li>
+<li>sampling,</li>
+<li>visualization,</li>
+<li>bootstrapping,</li>
+<li>causal analysis,</li>
+<li>inverse generative social science,</li>
+<li>role-playing.</li>
+</ul></li>
+<li>Empirical validation can directly compare simulated and empirical outputs, including distributions and other summary features.</li>
+<li>The authors recommend using multiple complementary validation methods rather than treating validation as a single statistical test.</li>
+</ul>
+<p><strong>How are uncertainty and stochasticity handled?</strong></p>
+<ul>
+<li>Sampling and sensitivity analysis are used to study how uncertainty in inputs affects outputs.</li>
+<li>Replication and adequate sample sizes are important when simulation output is stochastic.</li>
+<li>Bootstrapping is discussed as a possible tool when real-world data are limited.</li>
+<li>The paper does not provide one unified probabilistic model for all sources of uncertainty.</li>
+</ul>
+<p><strong>How do they decide the model is adequate?</strong></p>
+<ul>
+<li>There is no universal cutoff.</li>
+<li>Adequacy depends on the model’s intended purpose, application domain, available data, and what validation evidence is considered credible by relevant stakeholders.</li>
+<li>The authors recommend at least two different types of validation-supporting methods when possible.</li>
+<li>When no discipline-specific requirements exist, they suggest empirical validation plus face validation as a useful starting combination.</li>
+</ul>
+<p><strong>Limitations / open problems</strong></p>
+<ul>
+<li>The paper gives guidance rather than a formal algorithm for selecting validation procedures.</li>
+<li>Validation remains discipline-dependent.</li>
+<li>No single set of methods guarantees validity.</li>
+<li>The review does not solve how much simulation is enough or when a validation exercise should stop.</li>
+</ul>
+<p><strong>Relevant references to follow</strong></p>
+<ul>
+<li>Sargent (2013), <em>Verification and Validation of Simulation Models</em>.</li>
+<li>Windrum, Fagiolo &amp; Moneta (2007), <em>Empirical Validation of Agent-Based Models</em>.</li>
+<li>Klügl (2008), <em>A Validation Methodology for Agent-Based Simulations</em>.</li>
+<li>Balci (1998), <em>Verification, Validation, and Accreditation</em>.</li>
+<li>Grimm et al.&nbsp;(2020), work on agent-based model development and validation.</li>
+</ul>
+<hr>
+</section>
+<section id="sargent-2013" class="level2">
+<h2 class="anchored" data-anchor-id="sargent-2013">Sargent (2013)</h2>
+<p><strong>Citation</strong></p>
+<ul>
+<li>Sargent, R. G. (2013). <em>Verification and Validation of Simulation Models</em>. Journal of Simulation, 7(1), 12–24. <a href="https://doi.org/10.1057/jos.2012.20" class="uri">https://doi.org/10.1057/jos.2012.20</a></li>
+</ul>
+<p><strong>What problem is this paper solving?</strong></p>
+<ul>
+<li>Simulation models are increasingly used for decisions, so users need evidence that the implementation is correct and that the model is sufficiently accurate for its intended use.</li>
+<li>The paper provides a general framework for verification and validation, validation techniques, documentation, and decisions about model validity.</li>
+</ul>
+<p><strong>What does “validation” mean here?</strong></p>
+<ul>
+<li>A model is valid when its output behavior has the <strong>accuracy required for its intended purpose over its intended domain of application</strong>.</li>
+<li>The paper separates:
+<ul>
+<li>data validity,</li>
+<li>conceptual model validity,</li>
+<li>computerized model verification,</li>
+<li>operational validity.</li>
+</ul></li>
+<li>Verification asks whether the conceptual model was implemented correctly; validation asks whether the resulting model is sufficiently representative of the system for the intended application.</li>
+</ul>
+<p><strong>What data from reality are used?</strong></p>
+<ul>
+<li>This is a general methodological paper rather than one empirical application.</li>
+<li>When the real system is observable, system input/output behavior data are used.</li>
+<li>Data are needed for model construction, model evaluation, and simulation experiments.</li>
+<li>Sargent stresses that inadequate real-world data can make strong operational validation impossible.</li>
+</ul>
+<p><strong>How is the simulator compared with reality?</strong></p>
+<ul>
+<li>Operational validation compares model and system behavior under multiple experimental conditions.</li>
+<li>Common comparisons include:
+<ul>
+<li>graphical comparisons,</li>
+<li>confidence intervals,</li>
+<li>hypothesis tests.</li>
+</ul></li>
+<li>Comparisons may involve means, variances, distributions, or time-series behavior.</li>
+<li>When the real system is not observable, model behavior may instead be explored or compared with other models.</li>
+</ul>
+<p><strong>How are uncertainty and stochasticity handled?</strong></p>
+<ul>
+<li>Confidence intervals and hypothesis tests quantify uncertainty in comparisons.</li>
+<li>Sensitivity analysis is used to explore model behavior.</li>
+<li>Sample size affects the probability of accepting or rejecting a model.</li>
+<li>Sargent distinguishes:
+<ul>
+<li><strong>model builder’s risk</strong>: rejecting an adequate model,</li>
+<li><strong>model user’s risk</strong>: accepting an inadequate model.</li>
+</ul></li>
+</ul>
+<p><strong>How do they decide the model is adequate?</strong></p>
+<ul>
+<li>The required accuracy should be defined <strong>before or very early in model development</strong>.</li>
+<li>Adequacy is judged relative to that required accuracy and the intended application.</li>
+<li>The paper does not propose one universal validity test.</li>
+<li>Validation may be decided by the development team, users/sponsors, or an independent verification and validation process.</li>
+</ul>
+<p><strong>Limitations / open problems</strong></p>
+<ul>
+<li>What counts as “acceptable accuracy” remains application-specific.</li>
+<li>There is no universal algorithm for deciding which validation techniques should be used.</li>
+<li>Strong validation may be impossible when system data are unavailable.</li>
+<li>The framework predates many modern problems involving high-dimensional stochastic simulators, emulators, and expensive simulation budgets.</li>
+</ul>
+<p><strong>Relevant references to follow</strong></p>
+<ul>
+<li>Naylor &amp; Finger (1967), early simulation verification/validation work.</li>
+<li>Balci &amp; Sargent (1981), statistical validation and model-user/model-builder risk.</li>
+<li>Balci (1998), verification, validation, and accreditation.</li>
+<li>Kleijnen (1999), statistical techniques and data availability for model validation.</li>
+</ul>
+<hr>
+</section>
+<section id="bayarri-et-al.-2007" class="level2">
+<h2 class="anchored" data-anchor-id="bayarri-et-al.-2007">Bayarri et al.&nbsp;(2007)</h2>
+<p><strong>Citation</strong></p>
+<ul>
+<li>Bayarri, M. J., Berger, J. O., Paulo, R., Sacks, J., Cafeo, J. A., Cavendish, J., Lin, C. H., &amp; Tu, J. (2007). <em>A Framework for Validation of Computer Models</em>. Technometrics, 49(2), 138–154. <a href="https://doi.org/10.1198/004017007000000092" class="uri">https://doi.org/10.1198/004017007000000092</a></li>
+</ul>
+<p><strong>What problem is this paper solving?</strong></p>
+<ul>
+<li>The central question is: <strong>Does the computer model adequately represent reality?</strong></li>
+<li>The paper develops a formal statistical workflow for computer-model validation that incorporates multiple sources of uncertainty and allows predictions in settings without direct field observations.</li>
+</ul>
+<p><strong>What does “validation” mean here?</strong></p>
+<ul>
+<li>Validation is an assessment of whether computer-model predictions represent reality adequately for the quantities and uses of interest.</li>
+<li>The emphasis is not simply on whether model and field observations are equal.</li>
+<li>Instead, the framework quantifies systematic model bias/discrepancy and uncertainty in predictions.</li>
+</ul>
+<p><strong>What data from reality are used?</strong></p>
+<ul>
+<li>The published Technometrics paper uses a resistance spot-welding test bed to illustrate the framework.</li>
+<li>Field/physical measurements are combined with runs from the computer model.</li>
+<li>Earlier versions of the framework also used automotive examples.</li>
+</ul>
+<p><strong>How is the simulator compared with reality?</strong></p>
+<ul>
+<li>The framework has six iterative steps:
+<ol type="1">
+<li>specify model inputs and their uncertainty/ranges using an Input/Uncertainty map;</li>
+<li>define evaluation criteria;</li>
+<li>collect field data and design computer experiments;</li>
+<li>approximate expensive computer-model output;</li>
+<li>combine computer runs and field observations to estimate calibration parameters, bias/discrepancy, and predictive uncertainty;</li>
+<li>feed results back into further experiments or model revision.</li>
+</ol></li>
+<li>The computer model can be approximated with a Gaussian-process response surface when direct evaluation is expensive.</li>
+</ul>
+<p><strong>How are uncertainty and stochasticity handled?</strong></p>
+<ul>
+<li>The Bayesian framework combines uncertainty from:
+<ul>
+<li>unknown/tuning inputs,</li>
+<li>field measurement error,</li>
+<li>limited computer runs,</li>
+<li>emulator uncertainty,</li>
+<li>model discrepancy/bias.</li>
+</ul></li>
+<li>Posterior prediction and uncertainty bounds are central outputs.</li>
+<li>The original framework is primarily oriented toward deterministic computer codes rather than intrinsically stochastic simulators.</li>
+</ul>
+<p><strong>How do they decide the model is adequate?</strong></p>
+<ul>
+<li>The framework estimates discrepancy and predictive error with uncertainty bounds.</li>
+<li>Adequacy is evaluated relative to predefined evaluation criteria and the precision required for the model’s intended application.</li>
+<li>This makes validity more useful as a statement about <strong>predictive accuracy for a specific purpose</strong> than as a universal valid/invalid label.</li>
+</ul>
+<p><strong>Limitations / open problems</strong></p>
+<ul>
+<li>Calibration parameters and model discrepancy can be strongly confounded.</li>
+<li>Results depend on assumptions used for the emulator and discrepancy process.</li>
+<li>Physical field data are required for direct validation.</li>
+<li>The original framework does not directly solve replication allocation for stochastic simulators.</li>
+<li>Computational cost can still be substantial for large or high-dimensional models.</li>
+</ul>
+<p><strong>Relevant references to follow</strong></p>
+<ul>
+<li>Kennedy &amp; O’Hagan (2001), Bayesian computer-model calibration.</li>
+<li>Bayarri et al.&nbsp;(2007), <em>Computer Model Validation With Functional Output</em>.</li>
+<li>Higdon et al., work combining computer simulations and field observations.</li>
+<li>Later work on calibration/discrepancy identifiability.</li>
+</ul>
+<hr>
+</section>
+<section id="kennedy-ohagan-2001" class="level2">
+<h2 class="anchored" data-anchor-id="kennedy-ohagan-2001">Kennedy &amp; O’Hagan (2001)</h2>
+<p><strong>Citation</strong></p>
+<ul>
+<li>Kennedy, M. C., &amp; O’Hagan, A. (2001). <em>Bayesian Calibration of Computer Models</em>. Journal of the Royal Statistical Society: Series B, 63(3), 425–464. <a href="https://doi.org/10.1111/1467-9868.00294" class="uri">https://doi.org/10.1111/1467-9868.00294</a></li>
+</ul>
+<p><strong>What problem is this paper solving?</strong></p>
+<ul>
+<li>Complex computer codes often contain unknown calibration inputs.</li>
+<li>Traditional calibration finds values that make simulator output close to observations and then treats those fitted values as fixed.</li>
+<li>The paper develops a Bayesian approach that propagates remaining calibration uncertainty and explicitly allows the simulator to be structurally imperfect.</li>
+</ul>
+<p><strong>What does “validation” mean here?</strong></p>
+<ul>
+<li>This is primarily a <strong>calibration and prediction</strong> paper, not a validation framework.</li>
+<li>Its importance for validation is the distinction between:
+<ul>
+<li>uncertainty about the correct input parameters, and</li>
+<li><strong>model discrepancy</strong>, meaning systematic differences between the best simulator output and reality.</li>
+</ul></li>
+<li>A good parameter fit does not imply that the model itself is correct.</li>
+</ul>
+<p><strong>What data from reality are used?</strong></p>
+<ul>
+<li>The main real-data example is the 1993 Tomsk-7 chemical-plant accident.</li>
+<li>The analysis uses an aerial survey containing 695 measurements of ruthenium-106 deposition.</li>
+<li>The paper also considers a more complex simulated nuclear-accident exercise.</li>
+</ul>
+<p><strong>How is the simulator compared with reality?</strong></p>
+<ul>
+<li>Field observations are modeled using:
+<ul>
+<li>the computer-model response at unknown calibration parameters,</li>
+<li>a discrepancy function between the computer model and reality,</li>
+<li>observation error.</li>
+</ul></li>
+<li>Gaussian processes are used to represent the computer response and/or discrepancy.</li>
+<li>In the Tomsk analysis, subsets of the field observations are used for calibration and predictions are evaluated against remaining observations.</li>
+</ul>
+<p><strong>How are uncertainty and stochasticity handled?</strong></p>
+<ul>
+<li>The posterior distribution propagates:
+<ul>
+<li>calibration-parameter uncertainty,</li>
+<li>emulator uncertainty,</li>
+<li>model discrepancy,</li>
+<li>observational error,</li>
+<li>uncertainty in Gaussian-process hyperparameters.</li>
+</ul></li>
+<li>The underlying computer model is treated as deterministic; stochastic simulator variability is not the main problem considered.</li>
+</ul>
+<p><strong>How do they decide the model is adequate?</strong></p>
+<ul>
+<li>The paper emphasizes predictive distributions rather than a binary validation decision.</li>
+<li>Predictive performance can be examined using held-out physical observations and prediction error.</li>
+<li>Correcting for model discrepancy improves prediction when the simulator is systematically imperfect.</li>
+</ul>
+<p><strong>Limitations / open problems</strong></p>
+<ul>
+<li>Calibration parameters and discrepancy are not generally identifiable from field data alone.</li>
+<li>Different combinations of calibration parameters and discrepancy can explain the same observations.</li>
+<li>The authors caution against interpreting calibrated parameters as the true physical parameter values.</li>
+<li>High-dimensional calibration remains difficult.</li>
+<li>Results can depend on Gaussian-process covariance assumptions.</li>
+<li>The framework was designed around deterministic computer codes.</li>
+</ul>
+<p><strong>Relevant references to follow</strong></p>
+<ul>
+<li>Bayarri et al.&nbsp;(2007), validation framework.</li>
+<li>Brynjarsdóttir &amp; O’Hagan (2014), importance of model discrepancy for learning physical parameters.</li>
+<li>Tuo &amp; Wu (2015/2016), identifiability and consistency in computer-model calibration.</li>
+<li>Modern reviews of computer-model calibration and discrepancy.</li>
+</ul>
+<hr>
+</section>
+<section id="windrum-fagiolo-moneta-2007" class="level2">
+<h2 class="anchored" data-anchor-id="windrum-fagiolo-moneta-2007">Windrum, Fagiolo &amp; Moneta (2007)</h2>
+<p><strong>Citation</strong></p>
+<ul>
+<li>Windrum, P., Fagiolo, G., &amp; Moneta, A. (2007). <em>Empirical Validation of Agent-Based Models: Alternatives and Prospects</em>. Journal of Artificial Societies and Social Simulation, 10(2), 8. <a href="https://www.jasss.org/10/2/8.html" class="uri">https://www.jasss.org/10/2/8.html</a></li>
+</ul>
+<p><strong>What problem is this paper solving?</strong></p>
+<ul>
+<li>Agent-based models often contain many parameters and can produce many possible simulated “worlds.”</li>
+<li>The paper asks how ABMs should be empirically connected to the real systems they claim to explain.</li>
+<li>It compares three approaches to empirical validation:
+<ul>
+<li>indirect calibration,</li>
+<li>the Werker-Brenner approach,</li>
+<li>history-friendly modeling.</li>
+</ul></li>
+</ul>
+<p><strong>What does “validation” mean here?</strong></p>
+<ul>
+<li>Empirical validation evaluates how well the model’s data-generating process represents the real-world data-generating process.</li>
+<li>A model should reproduce and, ideally, explain empirically observed <strong>stylized facts</strong> rather than merely generate plausible-looking trajectories.</li>
+</ul>
+<p><strong>What data from reality are used?</strong></p>
+<ul>
+<li>This is a methodological review rather than one application.</li>
+<li>The approaches use combinations of:
+<ul>
+<li>micro- and macro-level empirical datasets,</li>
+<li>panel/time-series data,</li>
+<li>stylized facts,</li>
+<li>historical knowledge,</li>
+<li>detailed industry histories and case studies.</li>
+</ul></li>
+<li>Examples include labor-market relationships such as the Beveridge curve and historical evolution of the computer and pharmaceutical industries.</li>
+</ul>
+<p><strong>How is the simulator compared with reality?</strong></p>
+<ul>
+<li><strong>Indirect calibration</strong>:
+<ol type="1">
+<li>identify stylized facts;</li>
+<li>ground the model’s micro-level behavior in empirical evidence;</li>
+<li>finely sample the parameter space and retain parameter combinations capable of reproducing the observed facts;</li>
+<li>use the retained region to investigate mechanisms and new empirical implications.</li>
+</ol></li>
+<li>At each parameter point, Monte Carlo simulation can generate a distribution for the statistic of interest and test whether the observed statistic could plausibly have arisen from the model.</li>
+<li><strong>Werker-Brenner</strong> uses empirical evidence to constrain initial conditions and parameter ranges before output validation.</li>
+<li><strong>History-friendly models</strong> calibrate mechanisms and parameters to a specific historical case and compare simulated histories with the observed history.</li>
+</ul>
+<p><strong>How are uncertainty and stochasticity handled?</strong></p>
+<ul>
+<li>Stochastic variability is explicitly recognized as a major issue.</li>
+<li>The indirect-calibration approach uses repeated Monte Carlo simulation to characterize distributions of output statistics for a given parameter setting.</li>
+<li>Sensitivity analysis is treated as important for understanding whether conclusions are robust.</li>
+<li>The authors criticize history-friendly work for insufficient treatment of cross-run stochastic variability.</li>
+</ul>
+<p><strong>How do they decide the model is adequate?</strong></p>
+<ul>
+<li>There is no universal rule.</li>
+<li>In indirect calibration, a parameter configuration may be retained when the model does not reject the empirically observed stylized fact at a chosen confidence level.</li>
+<li>In history-friendly modeling, a “good” model is expected to reproduce multiple observed empirical patterns or historical features.</li>
+</ul>
+<p><strong>Limitations / open problems</strong></p>
+<ul>
+<li><strong>Over-parameterization:</strong> models may have enough freedom to reproduce broad empirical patterns almost regardless of mechanism.</li>
+<li><strong>Multiple possible worlds:</strong> many different parameter combinations may remain compatible with the same empirical facts.</li>
+<li>Different parameter configurations can generate the same or very similar output traces.</li>
+<li>It can be unclear whether an observed historical trace is typical of the real data-generating process.</li>
+<li>Stylized facts may hide important dynamic information.</li>
+<li>Counterfactual interpretations are difficult in stochastic, non-ergodic systems.</li>
+<li>Empirical information may be incomplete or contradictory.</li>
+<li>The relationship between validation results and policy conclusions remains unresolved.</li>
+</ul>
+<p><strong>Relevant references to follow</strong></p>
+<ul>
+<li>Werker &amp; Brenner (2004), empirical calibration.</li>
+<li>Fagiolo &amp; Dosi and related work on indirect calibration.</li>
+<li>Malerba et al.&nbsp;(1999), history-friendly modeling of the computer industry.</li>
+<li>Malerba &amp; Orsenigo (2001), pharmaceutical-industry history-friendly model.</li>
+<li>Moss (2008), alternative approaches to empirical validation of ABMs.</li>
+</ul>
+<hr>
+</section>
+<section id="belfrage-et-al.-2024" class="level2">
+<h2 class="anchored" data-anchor-id="belfrage-et-al.-2024">Belfrage et al.&nbsp;(2024)</h2>
+<p><strong>Citation</strong></p>
+<ul>
+<li>Belfrage, M., Johansson, E., Lorig, F., &amp; Davidsson, P. (2024). <em>[In]Credible Models – Verification, Validation &amp; Accreditation of Agent-Based Models to Support Policy-Making</em>. Journal of Artificial Societies and Social Simulation, 27(4), 4. <a href="https://doi.org/10.18564/jasss.5505" class="uri">https://doi.org/10.18564/jasss.5505</a></li>
+</ul>
+<p><strong>What problem is this paper solving?</strong></p>
+<ul>
+<li>ABMs are increasingly proposed for policy decisions, but verification and validation are often poorly performed or documented.</li>
+<li>Public organizations also lack established procedures for deciding whether an ABM is credible enough to use for policy.</li>
+<li>The paper develops a V&amp;V planning approach and proposes an accreditation framework for policy-facing ABMs.</li>
+</ul>
+<p><strong>What does “validation” mean here?</strong></p>
+<ul>
+<li>Validation concerns the alignment between the model and the target system for the intended application.</li>
+<li>The authors distinguish validity from <strong>credibility</strong>.</li>
+<li>They define model credibility as <strong>a measure of confidence in the model’s inferential capability</strong>.</li>
+<li>A valid model may still fail to inspire credibility, while perceived credibility without sufficient validity creates model-user risk.</li>
+</ul>
+<p><strong>What data from reality are used?</strong></p>
+<ul>
+<li>This is mainly a conceptual/framework paper rather than an empirical validation of one ABM.</li>
+<li>The paper reviews existing V&amp;V practices and uses the U.S. Coast Guard accreditation process as an institutional example.</li>
+<li>It provides an illustrative COVID-19 school-opening policy scenario.</li>
+<li>The authors explicitly leave real-world validation of their proposed accreditation framework for future work.</li>
+</ul>
+<p><strong>How is the simulator compared with reality?</strong></p>
+<ul>
+<li>The proposed V&amp;V plan can include:
+<ul>
+<li>conceptual-model validation,</li>
+<li>robustness analysis,</li>
+<li>statistical comparison of simulation outputs with empirical data,</li>
+<li>uncertainty and sensitivity analysis,</li>
+<li>model-dynamics validation,</li>
+<li>expert assessment.</li>
+</ul></li>
+<li>The accreditation process specifies the intended use and acceptance criteria before deciding whether the model is fit to support a policy decision.</li>
+<li>Post-implementation data should be used to evaluate both the policy and model after application.</li>
+</ul>
+<p><strong>How are uncertainty and stochasticity handled?</strong></p>
+<ul>
+<li>The paper stresses uncertainty from model inputs, the model itself, empirical referents, and social-system behavior.</li>
+<li>Quantitative uncertainty should be measured where possible.</li>
+<li>Non-quantifiable uncertainty should be communicated qualitatively and contextually.</li>
+<li>Sensitivity and robustness analyses are important because ABM conclusions may depend on assumptions and path-dependent dynamics.</li>
+<li>The paper notes the usefulness of separating fitting and testing data to reduce overfitting.</li>
+</ul>
+<p><strong>How do they decide the model is adequate?</strong></p>
+<ul>
+<li>The goal is not to prove that a model is “correct.”</li>
+<li>An independent accreditation process should determine whether the available V&amp;V evidence supports the model’s inferential capability for a <strong>specific intended application</strong>.</li>
+<li>Acceptance criteria should reflect the importance, risk, and intended use of the model.</li>
+<li>Models may be accredited with explicit limitations rather than accepted or rejected globally.</li>
+</ul>
+<p><strong>Limitations / open problems</strong></p>
+<ul>
+<li>The proposed accreditation framework is stylized and has not yet been validated through a real-world application.</li>
+<li>Accreditation systems developed for military or physical simulations may not transfer directly to uncertain social systems.</li>
+<li>Formal methods for robustness assessment remain limited.</li>
+<li>Comprehensive V&amp;V and accreditation can be resource-intensive.</li>
+<li>Suitable acceptance criteria for policy-facing ABMs remain application-specific.</li>
+</ul>
+<p><strong>Relevant references to follow</strong></p>
+<ul>
+<li>Balci (1994/1998), model credibility and VV&amp;A.</li>
+<li>Law, <em>Simulation Modeling and Analysis</em>.</li>
+<li>Duong (2010), accreditation and ABMs.</li>
+<li>Collins, Koehler &amp; Lynch (2024), ABM validation methods.</li>
+<li>European Commission / Joint Research Centre guidance on models for policy.</li>
+<li>U.S. Coast Guard documentation on simulation accreditation.</li>
+</ul>
+</section>
+</section>
+<section id="early-cross-paper-takeaways" class="level1">
+<h1>Early Cross-Paper Takeaways</h1>
+<ul>
+<li><strong>Validity is purpose-specific.</strong> None of these papers support a useful universal statement that a simulator is simply “valid.”</li>
+<li><strong>Calibration is not validation.</strong> Matching observed outcomes by tuning parameters does not by itself establish model adequacy.</li>
+<li><strong>Parameter non-uniqueness is central.</strong> Different parameter combinations may produce the same or similar emergent behavior.</li>
+<li><strong>Real-world comparison matters, but data may be sparse.</strong> This motivates uncertainty quantification, multiple forms of validation evidence, and careful separation of fitting from testing.</li>
+<li><strong>Stochasticity needs explicit treatment.</strong> Repeated simulation, Monte Carlo distributions, sensitivity analysis, and uncertainty decomposition appear repeatedly.</li>
+<li><strong>There is no universal stopping rule.</strong> The literature gives procedures for validation, but the question of when enough simulation evidence has accumulated remains important for this project.</li>
+</ul>
+</section>
+<section id="questions-to-carry-forward" class="level1">
+<h1>Questions to Carry Forward</h1>
+<ol type="1">
+<li>How should a <strong>plausible parameter region</strong> be defined when many parameter combinations reproduce the same observed behavior?</li>
+<li>How should simulator stochasticity, emulator uncertainty, measurement error, and model discrepancy be separated?</li>
+<li>Given a fixed simulation budget, when should the next run:
+<ul>
+<li>explore a new parameter setting, or</li>
+<li>replicate an existing setting?</li>
+</ul></li>
+<li>How many simulator runs are needed before a validation conclusion becomes stable?</li>
+<li>How should validation criteria be chosen before seeing the simulation results?</li>
+<li>How should calibration data be separated from data used for genuine validation?</li>
+<li>Can a controlled benchmark with known truth be used to compare competing validation routines?</li>
+</ol>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
