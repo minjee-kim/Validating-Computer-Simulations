@@ -23,7 +23,7 @@ The project will combine literature review with controlled simulation studies. W
 
 ## Core Questions
 
-* What does it mean for a simulator to be valid?
+* What does it mean for a simulator to be valid? [literature review](https://minjee-kim.github.io/Validating-Computer-Simulations/validation.html)
 * How should plausible parameter ranges be defined?
 * Where should simulations be run?
 * How many runs and replicates are needed?
