@@ -12,10 +12,10 @@ Applications include engineering, traffic, policy, agent-based, and other stocha
 
 The main challenge is deciding:
 
-* where to simulate,
-* when to replicate,
-* when to stop,
-* and what conclusions the available evidence supports.
+* where to simulate
+* when to replicate
+* when to stop
+* what conclusions the available evidence supports
 
 A particular difficulty is that many parameter combinations can produce similar emergent behavior. This motivates connections to prior predictive checking, emulation, history matching, and simulation-based validation.
 
