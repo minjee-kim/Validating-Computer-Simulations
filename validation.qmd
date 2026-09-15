@@ -4,50 +4,462 @@ format: html
 editor: visual
 ---
 
-Papers to read:
+# Purpose
 
-- **Collins, Koehler & Lynch (2024)** — *Methods That Support the Validation of Agent-Based Models*.
-  Use this as your map of the modern ABM validation literature. It reviews multiple validation approaches and explicitly discusses the lack of one accepted procedure.
+Working notes on what **validation** means across simulation and computer-model literatures.
 
-<!-- -->
+For each paper:
 
-- **Sargent — Verification and Validation of Simulation Models.**
-  This gives you the broader simulation literature, rather than starting from ABMs.
+- What problem is being solved?
+- What does "validation" mean?
+- What real-world data are used?
+- How is the simulator compared with reality?
+- How are uncertainty and stochasticity handled?
+- How is model adequacy decided?
+- What limitations or open problems remain?
+- What should be read next?
 
-- **Bayarri et al. (2007) — A Framework for Validation of Computer Models.**
-  This is where I would start thinking statistically about comparison with physical/real observations.
+# Papers
 
-- **Kennedy & O'Hagan (2001) — Bayesian Calibration of Computer Models.**\
-  Focus on the distinction between
-  wrong parametersandmodel discrepancy.\\text{wrong parameters}
-  \\quad\\text{and}\\quad
-  \\text{model discrepancy}.
+## Collins, Koehler & Lynch (2024)
 
-<!-- -->
+**Citation**
 
-- **Windrum, Fagiolo & Moneta (2007)** — empirical validation of ABMs.
-  This is useful because they explicitly discuss unresolved empirical-validation problems.
+- Collins, A. J., Koehler, M., & Lynch, C. J. (2024). *Methods That Support the Validation of Agent-Based Models: An Overview and Discussion*. Journal of Artificial Societies and Social Simulation, 27(1), 11. <https://doi.org/10.18564/jasss.5258>
 
-- **Belfrage et al. (2024)** — credibility of ABMs for policy use.\
+**What problem is this paper solving?**
 
-  This pushes the question from “does it fit?” toward “can we trust conclusions drawn from it?”
+- There is no universally accepted procedure for validating an agent-based model.
+- ABMs are especially difficult to validate because both their mechanisms and the systems they represent can be complex.
+- The paper organizes validation-supporting methods and provides practical guidance for choosing among them.
 
-For each paper,
+**What does "validation" mean here?**
 
-Citation:
+- Validation asks whether a model **adequately represents the system under study for its intended purpose**.
+- Validation is therefore purpose-dependent rather than a claim that a model is universally "correct."
+- Validation is also closely connected to model credibility with users and stakeholders.
 
-What problem is this paper solving?
+**What data from reality are used?**
 
-What does "validation" mean here?
+- This is a review, not a validation study of one dataset.
+- The empirical-validation methods discussed can use social-media data, surveys, demographic and spatial data, observational field studies, historical data, or other measurements of the system being modeled.
 
-What data from reality are used?
+**How is the simulator compared with reality?**
 
-How is the simulator compared with reality?
+- The paper reviews nine validation-supporting approaches:
+  - data analytics,
+  - docking,
+  - empirical validation,
+  - sampling,
+  - visualization,
+  - bootstrapping,
+  - causal analysis,
+  - inverse generative social science,
+  - role-playing.
+- Empirical validation can directly compare simulated and empirical outputs, including distributions and other summary features.
+- The authors recommend using multiple complementary validation methods rather than treating validation as a single statistical test.
 
-How are uncertainty and stochasticity handled?
+**How are uncertainty and stochasticity handled?**
 
-How do they decide the model is adequate?
+- Sampling and sensitivity analysis are used to study how uncertainty in inputs affects outputs.
+- Replication and adequate sample sizes are important when simulation output is stochastic.
+- Bootstrapping is discussed as a possible tool when real-world data are limited.
+- The paper does not provide one unified probabilistic model for all sources of uncertainty.
 
-Limitations / open problems:
+**How do they decide the model is adequate?**
 
-Relevant references to follow:
+- There is no universal cutoff.
+- Adequacy depends on the model's intended purpose, application domain, available data, and what validation evidence is considered credible by relevant stakeholders.
+- The authors recommend at least two different types of validation-supporting methods when possible.
+- When no discipline-specific requirements exist, they suggest empirical validation plus face validation as a useful starting combination.
+
+**Limitations / open problems**
+
+- The paper gives guidance rather than a formal algorithm for selecting validation procedures.
+- Validation remains discipline-dependent.
+- No single set of methods guarantees validity.
+- The review does not solve how much simulation is enough or when a validation exercise should stop.
+
+**Relevant references to follow**
+
+- Sargent (2013), *Verification and Validation of Simulation Models*.
+- Windrum, Fagiolo & Moneta (2007), *Empirical Validation of Agent-Based Models*.
+- Klügl (2008), *A Validation Methodology for Agent-Based Simulations*.
+- Balci (1998), *Verification, Validation, and Accreditation*.
+- Grimm et al. (2020), work on agent-based model development and validation.
+
+------------------------------------------------------------------------
+
+## Sargent (2013)
+
+**Citation**
+
+- Sargent, R. G. (2013). *Verification and Validation of Simulation Models*. Journal of Simulation, 7(1), 12–24. <https://doi.org/10.1057/jos.2012.20>
+
+**What problem is this paper solving?**
+
+- Simulation models are increasingly used for decisions, so users need evidence that the implementation is correct and that the model is sufficiently accurate for its intended use.
+- The paper provides a general framework for verification and validation, validation techniques, documentation, and decisions about model validity.
+
+**What does "validation" mean here?**
+
+- A model is valid when its output behavior has the **accuracy required for its intended purpose over its intended domain of application**.
+- The paper separates:
+  - data validity,
+  - conceptual model validity,
+  - computerized model verification,
+  - operational validity.
+- Verification asks whether the conceptual model was implemented correctly; validation asks whether the resulting model is sufficiently representative of the system for the intended application.
+
+**What data from reality are used?**
+
+- This is a general methodological paper rather than one empirical application.
+- When the real system is observable, system input/output behavior data are used.
+- Data are needed for model construction, model evaluation, and simulation experiments.
+- Sargent stresses that inadequate real-world data can make strong operational validation impossible.
+
+**How is the simulator compared with reality?**
+
+- Operational validation compares model and system behavior under multiple experimental conditions.
+- Common comparisons include:
+  - graphical comparisons,
+  - confidence intervals,
+  - hypothesis tests.
+- Comparisons may involve means, variances, distributions, or time-series behavior.
+- When the real system is not observable, model behavior may instead be explored or compared with other models.
+
+**How are uncertainty and stochasticity handled?**
+
+- Confidence intervals and hypothesis tests quantify uncertainty in comparisons.
+- Sensitivity analysis is used to explore model behavior.
+- Sample size affects the probability of accepting or rejecting a model.
+- Sargent distinguishes:
+  - **model builder's risk**: rejecting an adequate model,
+  - **model user's risk**: accepting an inadequate model.
+
+**How do they decide the model is adequate?**
+
+- The required accuracy should be defined **before or very early in model development**.
+- Adequacy is judged relative to that required accuracy and the intended application.
+- The paper does not propose one universal validity test.
+- Validation may be decided by the development team, users/sponsors, or an independent verification and validation process.
+
+**Limitations / open problems**
+
+- What counts as "acceptable accuracy" remains application-specific.
+- There is no universal algorithm for deciding which validation techniques should be used.
+- Strong validation may be impossible when system data are unavailable.
+- The framework predates many modern problems involving high-dimensional stochastic simulators, emulators, and expensive simulation budgets.
+
+**Relevant references to follow**
+
+- Naylor & Finger (1967), early simulation verification/validation work.
+- Balci & Sargent (1981), statistical validation and model-user/model-builder risk.
+- Balci (1998), verification, validation, and accreditation.
+- Kleijnen (1999), statistical techniques and data availability for model validation.
+
+------------------------------------------------------------------------
+
+## Bayarri et al. (2007)
+
+**Citation**
+
+- Bayarri, M. J., Berger, J. O., Paulo, R., Sacks, J., Cafeo, J. A., Cavendish, J., Lin, C. H., & Tu, J. (2007). *A Framework for Validation of Computer Models*. Technometrics, 49(2), 138–154. <https://doi.org/10.1198/004017007000000092>
+
+**What problem is this paper solving?**
+
+- The central question is: **Does the computer model adequately represent reality?**
+- The paper develops a formal statistical workflow for computer-model validation that incorporates multiple sources of uncertainty and allows predictions in settings without direct field observations.
+
+**What does "validation" mean here?**
+
+- Validation is an assessment of whether computer-model predictions represent reality adequately for the quantities and uses of interest.
+- The emphasis is not simply on whether model and field observations are equal.
+- Instead, the framework quantifies systematic model bias/discrepancy and uncertainty in predictions.
+
+**What data from reality are used?**
+
+- The published Technometrics paper uses a resistance spot-welding test bed to illustrate the framework.
+- Field/physical measurements are combined with runs from the computer model.
+- Earlier versions of the framework also used automotive examples.
+
+**How is the simulator compared with reality?**
+
+- The framework has six iterative steps:
+  1.  specify model inputs and their uncertainty/ranges using an Input/Uncertainty map;
+  2.  define evaluation criteria;
+  3.  collect field data and design computer experiments;
+  4.  approximate expensive computer-model output;
+  5.  combine computer runs and field observations to estimate calibration parameters, bias/discrepancy, and predictive uncertainty;
+  6.  feed results back into further experiments or model revision.
+- The computer model can be approximated with a Gaussian-process response surface when direct evaluation is expensive.
+
+**How are uncertainty and stochasticity handled?**
+
+- The Bayesian framework combines uncertainty from:
+  - unknown/tuning inputs,
+  - field measurement error,
+  - limited computer runs,
+  - emulator uncertainty,
+  - model discrepancy/bias.
+- Posterior prediction and uncertainty bounds are central outputs.
+- The original framework is primarily oriented toward deterministic computer codes rather than intrinsically stochastic simulators.
+
+**How do they decide the model is adequate?**
+
+- The framework estimates discrepancy and predictive error with uncertainty bounds.
+- Adequacy is evaluated relative to predefined evaluation criteria and the precision required for the model's intended application.
+- This makes validity more useful as a statement about **predictive accuracy for a specific purpose** than as a universal valid/invalid label.
+
+**Limitations / open problems**
+
+- Calibration parameters and model discrepancy can be strongly confounded.
+- Results depend on assumptions used for the emulator and discrepancy process.
+- Physical field data are required for direct validation.
+- The original framework does not directly solve replication allocation for stochastic simulators.
+- Computational cost can still be substantial for large or high-dimensional models.
+
+**Relevant references to follow**
+
+- Kennedy & O'Hagan (2001), Bayesian computer-model calibration.
+- Bayarri et al. (2007), *Computer Model Validation With Functional Output*.
+- Higdon et al., work combining computer simulations and field observations.
+- Later work on calibration/discrepancy identifiability.
+
+------------------------------------------------------------------------
+
+## Kennedy & O'Hagan (2001)
+
+**Citation**
+
+- Kennedy, M. C., & O'Hagan, A. (2001). *Bayesian Calibration of Computer Models*. Journal of the Royal Statistical Society: Series B, 63(3), 425–464. <https://doi.org/10.1111/1467-9868.00294>
+
+**What problem is this paper solving?**
+
+- Complex computer codes often contain unknown calibration inputs.
+- Traditional calibration finds values that make simulator output close to observations and then treats those fitted values as fixed.
+- The paper develops a Bayesian approach that propagates remaining calibration uncertainty and explicitly allows the simulator to be structurally imperfect.
+
+**What does "validation" mean here?**
+
+- This is primarily a **calibration and prediction** paper, not a validation framework.
+- Its importance for validation is the distinction between:
+  - uncertainty about the correct input parameters, and
+  - **model discrepancy**, meaning systematic differences between the best simulator output and reality.
+- A good parameter fit does not imply that the model itself is correct.
+
+**What data from reality are used?**
+
+- The main real-data example is the 1993 Tomsk-7 chemical-plant accident.
+- The analysis uses an aerial survey containing 695 measurements of ruthenium-106 deposition.
+- The paper also considers a more complex simulated nuclear-accident exercise.
+
+**How is the simulator compared with reality?**
+
+- Field observations are modeled using:
+  - the computer-model response at unknown calibration parameters,
+  - a discrepancy function between the computer model and reality,
+  - observation error.
+- Gaussian processes are used to represent the computer response and/or discrepancy.
+- In the Tomsk analysis, subsets of the field observations are used for calibration and predictions are evaluated against remaining observations.
+
+**How are uncertainty and stochasticity handled?**
+
+- The posterior distribution propagates:
+  - calibration-parameter uncertainty,
+  - emulator uncertainty,
+  - model discrepancy,
+  - observational error,
+  - uncertainty in Gaussian-process hyperparameters.
+- The underlying computer model is treated as deterministic; stochastic simulator variability is not the main problem considered.
+
+**How do they decide the model is adequate?**
+
+- The paper emphasizes predictive distributions rather than a binary validation decision.
+- Predictive performance can be examined using held-out physical observations and prediction error.
+- Correcting for model discrepancy improves prediction when the simulator is systematically imperfect.
+
+**Limitations / open problems**
+
+- Calibration parameters and discrepancy are not generally identifiable from field data alone.
+- Different combinations of calibration parameters and discrepancy can explain the same observations.
+- The authors caution against interpreting calibrated parameters as the true physical parameter values.
+- High-dimensional calibration remains difficult.
+- Results can depend on Gaussian-process covariance assumptions.
+- The framework was designed around deterministic computer codes.
+
+**Relevant references to follow**
+
+- Bayarri et al. (2007), validation framework.
+- Brynjarsdóttir & O'Hagan (2014), importance of model discrepancy for learning physical parameters.
+- Tuo & Wu (2015/2016), identifiability and consistency in computer-model calibration.
+- Modern reviews of computer-model calibration and discrepancy.
+
+------------------------------------------------------------------------
+
+## Windrum, Fagiolo & Moneta (2007)
+
+**Citation**
+
+- Windrum, P., Fagiolo, G., & Moneta, A. (2007). *Empirical Validation of Agent-Based Models: Alternatives and Prospects*. Journal of Artificial Societies and Social Simulation, 10(2), 8. <https://www.jasss.org/10/2/8.html>
+
+**What problem is this paper solving?**
+
+- Agent-based models often contain many parameters and can produce many possible simulated "worlds."
+- The paper asks how ABMs should be empirically connected to the real systems they claim to explain.
+- It compares three approaches to empirical validation:
+  - indirect calibration,
+  - the Werker-Brenner approach,
+  - history-friendly modeling.
+
+**What does "validation" mean here?**
+
+- Empirical validation evaluates how well the model's data-generating process represents the real-world data-generating process.
+- A model should reproduce and, ideally, explain empirically observed **stylized facts** rather than merely generate plausible-looking trajectories.
+
+**What data from reality are used?**
+
+- This is a methodological review rather than one application.
+- The approaches use combinations of:
+  - micro- and macro-level empirical datasets,
+  - panel/time-series data,
+  - stylized facts,
+  - historical knowledge,
+  - detailed industry histories and case studies.
+- Examples include labor-market relationships such as the Beveridge curve and historical evolution of the computer and pharmaceutical industries.
+
+**How is the simulator compared with reality?**
+
+- **Indirect calibration**:
+  1.  identify stylized facts;
+  2.  ground the model's micro-level behavior in empirical evidence;
+  3.  finely sample the parameter space and retain parameter combinations capable of reproducing the observed facts;
+  4.  use the retained region to investigate mechanisms and new empirical implications.
+- At each parameter point, Monte Carlo simulation can generate a distribution for the statistic of interest and test whether the observed statistic could plausibly have arisen from the model.
+- **Werker-Brenner** uses empirical evidence to constrain initial conditions and parameter ranges before output validation.
+- **History-friendly models** calibrate mechanisms and parameters to a specific historical case and compare simulated histories with the observed history.
+
+**How are uncertainty and stochasticity handled?**
+
+- Stochastic variability is explicitly recognized as a major issue.
+- The indirect-calibration approach uses repeated Monte Carlo simulation to characterize distributions of output statistics for a given parameter setting.
+- Sensitivity analysis is treated as important for understanding whether conclusions are robust.
+- The authors criticize history-friendly work for insufficient treatment of cross-run stochastic variability.
+
+**How do they decide the model is adequate?**
+
+- There is no universal rule.
+- In indirect calibration, a parameter configuration may be retained when the model does not reject the empirically observed stylized fact at a chosen confidence level.
+- In history-friendly modeling, a "good" model is expected to reproduce multiple observed empirical patterns or historical features.
+
+**Limitations / open problems**
+
+- **Over-parameterization:** models may have enough freedom to reproduce broad empirical patterns almost regardless of mechanism.
+- **Multiple possible worlds:** many different parameter combinations may remain compatible with the same empirical facts.
+- Different parameter configurations can generate the same or very similar output traces.
+- It can be unclear whether an observed historical trace is typical of the real data-generating process.
+- Stylized facts may hide important dynamic information.
+- Counterfactual interpretations are difficult in stochastic, non-ergodic systems.
+- Empirical information may be incomplete or contradictory.
+- The relationship between validation results and policy conclusions remains unresolved.
+
+**Relevant references to follow**
+
+- Werker & Brenner (2004), empirical calibration.
+- Fagiolo & Dosi and related work on indirect calibration.
+- Malerba et al. (1999), history-friendly modeling of the computer industry.
+- Malerba & Orsenigo (2001), pharmaceutical-industry history-friendly model.
+- Moss (2008), alternative approaches to empirical validation of ABMs.
+
+------------------------------------------------------------------------
+
+## Belfrage et al. (2024)
+
+**Citation**
+
+- Belfrage, M., Johansson, E., Lorig, F., & Davidsson, P. (2024). *\[In\]Credible Models – Verification, Validation & Accreditation of Agent-Based Models to Support Policy-Making*. Journal of Artificial Societies and Social Simulation, 27(4), 4. <https://doi.org/10.18564/jasss.5505>
+
+**What problem is this paper solving?**
+
+- ABMs are increasingly proposed for policy decisions, but verification and validation are often poorly performed or documented.
+- Public organizations also lack established procedures for deciding whether an ABM is credible enough to use for policy.
+- The paper develops a V&V planning approach and proposes an accreditation framework for policy-facing ABMs.
+
+**What does "validation" mean here?**
+
+- Validation concerns the alignment between the model and the target system for the intended application.
+- The authors distinguish validity from **credibility**.
+- They define model credibility as **a measure of confidence in the model's inferential capability**.
+- A valid model may still fail to inspire credibility, while perceived credibility without sufficient validity creates model-user risk.
+
+**What data from reality are used?**
+
+- This is mainly a conceptual/framework paper rather than an empirical validation of one ABM.
+- The paper reviews existing V&V practices and uses the U.S. Coast Guard accreditation process as an institutional example.
+- It provides an illustrative COVID-19 school-opening policy scenario.
+- The authors explicitly leave real-world validation of their proposed accreditation framework for future work.
+
+**How is the simulator compared with reality?**
+
+- The proposed V&V plan can include:
+  - conceptual-model validation,
+  - robustness analysis,
+  - statistical comparison of simulation outputs with empirical data,
+  - uncertainty and sensitivity analysis,
+  - model-dynamics validation,
+  - expert assessment.
+- The accreditation process specifies the intended use and acceptance criteria before deciding whether the model is fit to support a policy decision.
+- Post-implementation data should be used to evaluate both the policy and model after application.
+
+**How are uncertainty and stochasticity handled?**
+
+- The paper stresses uncertainty from model inputs, the model itself, empirical referents, and social-system behavior.
+- Quantitative uncertainty should be measured where possible.
+- Non-quantifiable uncertainty should be communicated qualitatively and contextually.
+- Sensitivity and robustness analyses are important because ABM conclusions may depend on assumptions and path-dependent dynamics.
+- The paper notes the usefulness of separating fitting and testing data to reduce overfitting.
+
+**How do they decide the model is adequate?**
+
+- The goal is not to prove that a model is "correct."
+- An independent accreditation process should determine whether the available V&V evidence supports the model's inferential capability for a **specific intended application**.
+- Acceptance criteria should reflect the importance, risk, and intended use of the model.
+- Models may be accredited with explicit limitations rather than accepted or rejected globally.
+
+**Limitations / open problems**
+
+- The proposed accreditation framework is stylized and has not yet been validated through a real-world application.
+- Accreditation systems developed for military or physical simulations may not transfer directly to uncertain social systems.
+- Formal methods for robustness assessment remain limited.
+- Comprehensive V&V and accreditation can be resource-intensive.
+- Suitable acceptance criteria for policy-facing ABMs remain application-specific.
+
+**Relevant references to follow**
+
+- Balci (1994/1998), model credibility and VV&A.
+- Law, *Simulation Modeling and Analysis*.
+- Duong (2010), accreditation and ABMs.
+- Collins, Koehler & Lynch (2024), ABM validation methods.
+- European Commission / Joint Research Centre guidance on models for policy.
+- U.S. Coast Guard documentation on simulation accreditation.
+
+# Early Cross-Paper Takeaways
+
+- **Validity is purpose-specific.** None of these papers support a useful universal statement that a simulator is simply "valid."
+- **Calibration is not validation.** Matching observed outcomes by tuning parameters does not by itself establish model adequacy.
+- **Parameter non-uniqueness is central.** Different parameter combinations may produce the same or similar emergent behavior.
+- **Real-world comparison matters, but data may be sparse.** This motivates uncertainty quantification, multiple forms of validation evidence, and careful separation of fitting from testing.
+- **Stochasticity needs explicit treatment.** Repeated simulation, Monte Carlo distributions, sensitivity analysis, and uncertainty decomposition appear repeatedly.
+- **There is no universal stopping rule.** The literature gives procedures for validation, but the question of when enough simulation evidence has accumulated remains important for this project.
+
+# Questions to Carry Forward
+
+1.  How should a **plausible parameter region** be defined when many parameter combinations reproduce the same observed behavior?
+2.  How should simulator stochasticity, emulator uncertainty, measurement error, and model discrepancy be separated?
+3.  Given a fixed simulation budget, when should the next run:
+    - explore a new parameter setting, or
+    - replicate an existing setting?
+4.  How many simulator runs are needed before a validation conclusion becomes stable?
+5.  How should validation criteria be chosen before seeing the simulation results?
+6.  How should calibration data be separated from data used for genuine validation?
+7.  Can a controlled benchmark with known truth be used to compare competing validation routines?
