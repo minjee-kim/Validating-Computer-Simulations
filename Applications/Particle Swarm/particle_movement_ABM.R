@@ -12,7 +12,8 @@ library(gganimate)
 
 vis_ABM <- function(total_population = 100,
                     steps = 100,
-                    movement_speed = 1.3,
+                    movement_speed = 1.3, 
+                    animate = FALSE, 
                     seed = NULL) {
   
   if (!is.null(seed)) {
@@ -121,16 +122,14 @@ vis_ABM <- function(total_population = 100,
     steps + 1
   )
   
-  
-  # Time 0
+  # Initial state
   agents$step <- 0
-  
   agent_history[[1]] <- agents
   
   
-  # Run the model
   for (t in 1:steps) {
     
+    # Move agents
     agents <- move_agents(
       agents = agents,
       env = env,
@@ -139,7 +138,27 @@ vis_ABM <- function(total_population = 100,
     
     agents$step <- t
     
+    # Save state
     agent_history[[t + 1]] <- agents
+    
+    
+    # OPTIONAL LIVE ANIMATION
+    if (animate) {
+      
+      plot(
+        agents$x,
+        agents$y,
+        xlim = c(env$x_min, env$x_max),
+        ylim = c(env$y_min, env$y_max),
+        asp = 1,
+        pch = 19,
+        xlab = "X",
+        ylab = "Y",
+        main = paste("Step", t)
+      )
+      
+      Sys.sleep(0.03)
+    }
   }
   
   
@@ -150,5 +169,6 @@ vis_ABM <- function(total_population = 100,
   history <- bind_rows(agent_history)
   
   return(history)
+
 }
 
