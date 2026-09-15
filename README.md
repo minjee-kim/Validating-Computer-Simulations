@@ -22,7 +22,7 @@ A particular difficulty is that many parameter combinations can produce similar 
 The project will combine literature review with controlled simulation studies. We will begin with a lightweight stochastic simulator with a known data-generating system before moving to more complex applications.
 
 Related topics: [Agent Based Models](https://www.nature.com/articles/s41598-023-35536-3), [Validation of Agent Based Models](https://www.jasss.org/27/1/11.html), [History matching](https://www.sciencedirect.com/science/article/pii/S1755436525000337?fr=RR-2&ref=pdf_download&rr=a3b8a61d7dbca918), 
-[Global Sensitivity Analysis](https://www.nature.com/articles/s41598-024-64331-x?fromPaywallRec=false), [Trajectory-based GSA](https://www.nature.com/articles/s41598-024-64331-x?fromPaywallRec=false), [Validation protocol](https://www-sciencedirect-com.srv-proxy2.library.tamu.edu/science/article/pii/S1364815222002596). 
+[Global Sensitivity Analysis](https://www.nature.com/articles/s41598-024-64331-x?fromPaywallRec=false), [Trajectory-based GSA](https://www.nature.com/articles/s41598-024-64331-x?fromPaywallRec=false), [Validation protocol](https://www-sciencedirect-com.srv-proxy2.library.tamu.edu/science/article/pii/S1364815222002596), [Interpretable Black Box](https://christophm.github.io/interpretable-ml-book/). 
 
 
 ## Core Questions
