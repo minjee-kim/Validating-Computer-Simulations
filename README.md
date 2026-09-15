@@ -33,7 +33,7 @@ The project will combine literature review with controlled simulation studies. W
 * When is there enough evidence to stop?
 * How should calibration and validation be separated?
 
-## Framework
+## Validation Framework
 
 ```text
 Parameter space
