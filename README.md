@@ -1,4 +1,4 @@
-# Validating-Computer-Simulations
+# Validating Computer Simulations
 
 ### Statistical validation of expensive stochastic computer simulations under limited real-world information
 
