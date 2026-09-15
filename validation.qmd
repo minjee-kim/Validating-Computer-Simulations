@@ -21,25 +21,21 @@ For each paper:
 
 Papers reviewed in this document:
 
-- **Collins, A. J., Koehler, M., & Lynch, C. J. (2024).** *Methods That Support the Validation of Agent-Based Models: An Overview and Discussion.* *Journal of Artificial Societies and Social Simulation*, 27(1), 11.
+- **Collins, A. J., Koehler, M., & Lynch, C. J. (2024).** *Methods That Support the Validation of Agent-Based Models: An Overview and Discussion.* *Journal of Artificial Societies and Social Simulation*, 27(1), 11. <https://doi.org/10.18564/jasss.5258>
 
-- **Sargent, R. G. (2013).** *Verification and Validation of Simulation Models.* *Journal of Simulation*, 7(1), 12–24.
+- **Sargent, R. G. (2013).** *Verification and Validation of Simulation Models.* *Journal of Simulation*, 7(1), 12–24. <https://doi.org/10.1057/jos.2012.20>
 
-- **Bayarri, M. J., et al. (2007).** *A Framework for Validation of Computer Models.* *Technometrics*, 49(2), 138–154.
+- **Bayarri, M. J., et al. (2007).** *A Framework for Validation of Computer Models.* *Technometrics*, 49(2), 138–154. <https://doi.org/10.1198/004017007000000092>
 
-- **Kennedy, M. C., & O'Hagan, A. (2001).** *Bayesian Calibration of Computer Models.* *Journal of the Royal Statistical Society: Series B*, 63(3), 425–464.
+- **Kennedy, M. C., & O'Hagan, A. (2001).** *Bayesian Calibration of Computer Models.* *Journal of the Royal Statistical Society: Series B*, 63(3), 425–464. <https://doi.org/10.1111/1467-9868.00294>
 
-- **Windrum, P., Fagiolo, G., & Moneta, A. (2007).** *Empirical Validation of Agent-Based Models: Alternatives and Prospects.* *Journal of Artificial Societies and Social Simulation*, 10(2), 8.
+- **Windrum, P., Fagiolo, G., & Moneta, A. (2007).** *Empirical Validation of Agent-Based Models: Alternatives and Prospects.* *Journal of Artificial Societies and Social Simulation*, 10(2), 8. <https://www.jasss.org/10/2/8.html>
 
-- **Belfrage, M., Johansson, E., Lorig, F., & Davidsson, P. (2024).** *\[In\]Credible Models – Verification, Validation & Accreditation of Agent-Based Models to Support Policy-Making.* *Journal of Artificial Societies and Social Simulation*, 27(4), 4.
+- **Belfrage, M., Johansson, E., Lorig, F., & Davidsson, P. (2024).** *\[In\]Credible Models – Verification, Validation & Accreditation of Agent-Based Models to Support Policy-Making.* *Journal of Artificial Societies and Social Simulation*, 27(4), 4. <https://doi.org/10.18564/jasss.5505>
 
 # Literature Review
 
-## Collins, Koehler & Lynch (2024)
-
-**Citation**
-
-- Collins, A. J., Koehler, M., & Lynch, C. J. (2024). *Methods That Support the Validation of Agent-Based Models: An Overview and Discussion*. Journal of Artificial Societies and Social Simulation, 27(1), 11. <https://doi.org/10.18564/jasss.5258>
+## 1. Collins, Koehler & Lynch (2024)
 
 **What problem is this paper solving?**
 
@@ -104,11 +100,7 @@ Papers reviewed in this document:
 
 ------------------------------------------------------------------------
 
-## Sargent (2013)
-
-**Citation**
-
-- Sargent, R. G. (2013). *Verification and Validation of Simulation Models*. Journal of Simulation, 7(1), 12–24. <https://doi.org/10.1057/jos.2012.20>
+## 2. Sargent (2013)
 
 **What problem is this paper solving?**
 
@@ -174,11 +166,7 @@ Papers reviewed in this document:
 
 ------------------------------------------------------------------------
 
-## Bayarri et al. (2007)
-
-**Citation**
-
-- Bayarri, M. J., Berger, J. O., Paulo, R., Sacks, J., Cafeo, J. A., Cavendish, J., Lin, C. H., & Tu, J. (2007). *A Framework for Validation of Computer Models*. Technometrics, 49(2), 138–154. <https://doi.org/10.1198/004017007000000092>
+## 3. Bayarri et al. (2007)
 
 **What problem is this paper solving?**
 
@@ -242,7 +230,7 @@ Papers reviewed in this document:
 
 ------------------------------------------------------------------------
 
-## Kennedy & O'Hagan (2001)
+## 4. Kennedy & O'Hagan (2001)
 
 **Citation**
 
@@ -311,11 +299,7 @@ Papers reviewed in this document:
 
 ------------------------------------------------------------------------
 
-## Windrum, Fagiolo & Moneta (2007)
-
-**Citation**
-
-- Windrum, P., Fagiolo, G., & Moneta, A. (2007). *Empirical Validation of Agent-Based Models: Alternatives and Prospects*. Journal of Artificial Societies and Social Simulation, 10(2), 8. <https://www.jasss.org/10/2/8.html>
+## 5. Windrum, Fagiolo & Moneta (2007)
 
 **What problem is this paper solving?**
 
@@ -387,11 +371,7 @@ Papers reviewed in this document:
 
 ------------------------------------------------------------------------
 
-## Belfrage et al. (2024)
-
-**Citation**
-
-- Belfrage, M., Johansson, E., Lorig, F., & Davidsson, P. (2024). *\[In\]Credible Models – Verification, Validation & Accreditation of Agent-Based Models to Support Policy-Making*. Journal of Artificial Societies and Social Simulation, 27(4), 4. <https://doi.org/10.18564/jasss.5505>
+## 6. Belfrage et al. (2024)
 
 **What problem is this paper solving?**
 
@@ -457,23 +437,16 @@ Papers reviewed in this document:
 - European Commission / Joint Research Centre guidance on models for policy.
 - U.S. Coast Guard documentation on simulation accreditation.
 
-# Early Cross-Paper Takeaways
+# Takeaways
 
 - **Validity is purpose-specific.** None of these papers support a useful universal statement that a simulator is simply "valid."
+
 - **Calibration is not validation.** Matching observed outcomes by tuning parameters does not by itself establish model adequacy.
+
 - **Parameter non-uniqueness is central.** Different parameter combinations may produce the same or similar emergent behavior.
+
 - **Real-world comparison matters, but data may be sparse.** This motivates uncertainty quantification, multiple forms of validation evidence, and careful separation of fitting from testing.
+
 - **Stochasticity needs explicit treatment.** Repeated simulation, Monte Carlo distributions, sensitivity analysis, and uncertainty decomposition appear repeatedly.
+
 - **There is no universal stopping rule.** The literature gives procedures for validation, but the question of when enough simulation evidence has accumulated remains important for this project.
-
-# Questions to Carry Forward
-
-1.  How should a **plausible parameter region** be defined when many parameter combinations reproduce the same observed behavior?
-2.  How should simulator stochasticity, emulator uncertainty, measurement error, and model discrepancy be separated?
-3.  Given a fixed simulation budget, when should the next run:
-    - explore a new parameter setting, or
-    - replicate an existing setting?
-4.  How many simulator runs are needed before a validation conclusion becomes stable?
-5.  How should validation criteria be chosen before seeing the simulation results?
-6.  How should calibration data be separated from data used for genuine validation?
-7.  Can a controlled benchmark with known truth be used to compare competing validation routines?
