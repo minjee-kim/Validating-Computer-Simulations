@@ -3,7 +3,7 @@
 ### Statistical validation of expensive stochastic computer simulations under limited real-world information
 
 ## Goal
-
+** video https://www.youtube.com/watch?v=_3a_RV8fL3k 
 Complex simulations are increasingly easy to build with AI tools, but remain difficult to validate.
 
 This project studies how to determine whether a stochastic simulator is a reasonable representation of reality when simulations are expensive, parameters are uncertain, outputs are stochastic, and only limited real-world data are available for comparison.
